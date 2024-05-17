@@ -14232,7 +14232,7 @@ static int oneplus_chg_get_charger_subtype(void)
 	return CHARGER_SUBTYPE_DEFAULT;
 }
 
-static int oneplus_set_qc_config()
+static int oneplus_set_qc_config(void)
 {
 	return 0;
 }

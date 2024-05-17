@@ -63,7 +63,7 @@ int __attribute__((weak)) request_firmware_select(const struct firmware **firmwa
 //	return 1;
 //}
 
-void oneplus_warp_battery_update()
+void oneplus_warp_battery_update(void)
 {
 	struct oneplus_warp_chip *chip = g_warp_chip;
 /*
@@ -1166,7 +1166,7 @@ void oneplus_warp_set_fastchg_to_warm_false(void)
 	}
 }
 
-bool oneplus_warp_get_fastchg_low_temp_full()
+bool oneplus_warp_get_fastchg_low_temp_full(void)
 {
 	if (!g_warp_chip) {
 		return false;
