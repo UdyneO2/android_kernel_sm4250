@@ -2535,19 +2535,11 @@ reset:
 
 static int fsg_set_alt(struct usb_function *f, unsigned intf, unsigned alt)
 {
-	int rc;
 	struct fsg_dev *fsg = fsg_from_func(f);
 
 	__raise_exception(fsg->common, FSG_STATE_CONFIG_CHANGE, fsg);
 
 	return USB_GADGET_DELAYED_STATUS;
-
-reset_bulk_int:
-		usb_ep_disable(fsg->bulk_in);
-		fsg->bulk_in->driver_data = NULL;
-		fsg->bulk_in_enabled = 0;
-err_exit:
-		return rc;
 }
 
 static void fsg_disable(struct usb_function *f)
